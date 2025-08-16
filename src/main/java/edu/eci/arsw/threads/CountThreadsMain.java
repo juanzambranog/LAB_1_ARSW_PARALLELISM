@@ -15,15 +15,15 @@ public class CountThreadsMain {
 
 
         CountThread thread1 = new CountThread(0,99);
-        thread1.start();
-        System.out.println(thread1);
+        thread1.run();
+        System.out.print(thread1+ " ");
 
         CountThread thread2 = new CountThread(99,199);
-        thread2.start();
-        System.out.println(thread2);
+        thread2.run();
+        System.out.print(thread2 + " ");
         CountThread thread3 = new CountThread(200,299);
-        thread3.start();
-        System.out.println(thread3);        
+        thread3.run();
+        System.out.print(thread3 + " ");        
     }
     
 }
