@@ -19,34 +19,34 @@
 
 ## Solucion propuesta
 
-![alt text](image.png)
+![alt text](/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH-master/img/image.png)
 
 
 2. Complete el método __main__ de la clase CountMainThreads para que:
 	1. Cree 3 hilos de tipo CountThread, asignándole al primero el intervalo [0..99], al segundo [99..199], y al tercero [200..299].
 
-	![alt text](image-1.png)
+	![alt text](/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH-master/img/image-1.png)
 
 
 
 	2. Inicie los tres hilos con 'start()'.
 
-	![alt text](image-2.png)
+	![alt text](/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH-master/img/image-2.png)
 
 
 
 
 	3. Ejecute y revise la salida por pantalla. 
 
-	![alt text](image-3.png)
+	![alt text](/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH-master/img/image-3.png)
 
 
 	
 	4. Cambie el incio con 'start()' por 'run()'. Cómo cambia la salida?, por qué?.
 
-	![alt text](image-4.png)
+	![alt text](/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH-master/img/image-4.png)
 
-	![alt text](image-5.png)
+	![alt text](/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH-master/img/image-5.png)
 
 	En orden con run() y en desorden con start()
 **Parte II - Ejercicio Black List Search**
