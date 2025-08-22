@@ -53,7 +53,7 @@ public class HostBlackListThread extends Thread {
             }
 
             // Mantener el hilo vivo para poder verlo en VisualVM
-            Thread.sleep(2000); // 3 segundos
+            Thread.sleep(4000); // 3 segundos
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
