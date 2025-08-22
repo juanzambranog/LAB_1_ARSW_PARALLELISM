@@ -19,36 +19,31 @@
 
 ## Solucion propuesta
 
-![alt text](/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH-master/img/image.png)
+![alt text](/img/image.png)
 
 
 2. Complete el método __main__ de la clase CountMainThreads para que:
 	1. Cree 3 hilos de tipo CountThread, asignándole al primero el intervalo [0..99], al segundo [99..199], y al tercero [200..299].
 
-	![alt text](/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH-master/img/image-1.png)
+	![alt text](/img/image-1.png)
 
+    2. Inicie los tres hilos con 'start()'.
 
-
-	2. Inicie los tres hilos con 'start()'.
-
-	![alt text](/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH-master/img/image-2.png)
-
-
-
+	![alt text](/img/image-2.png)
 
 	3. Ejecute y revise la salida por pantalla. 
 
-	![alt text](/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH-master/img/image-3.png)
+	![alt text](/img/image-3.png)
 
-
-	
 	4. Cambie el incio con 'start()' por 'run()'. Cómo cambia la salida?, por qué?.
 
-	![alt text](/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH-master/img/image-4.png)
+	![alt text](/img/image-4.png)
 
-	![alt text](/PARALLELISM-JAVA_THREADS-INTRODUCTION_BLACKLISTSEARCH-master/img/image-5.png)
+	![alt text](/img/image-5.png)
 
 	En orden con run() y en desorden con start()
+
+
 **Parte II - Ejercicio Black List Search**
 
 
@@ -76,13 +71,28 @@ Al programa de prueba provisto (Main), le toma sólo algunos segundos análizar 
 Para 'refactorizar' este código, y hacer que explote la capacidad multi-núcleo de la CPU del equipo, realice lo siguiente:
 
 1. Cree una clase de tipo Thread que represente el ciclo de vida de un hilo que haga la búsqueda de un segmento del conjunto de servidores disponibles. Agregue a dicha clase un método que permita 'preguntarle' a las instancias del mismo (los hilos) cuantas ocurrencias de servidores maliciosos ha encontrado o encontró.
+    
+    ![img.png](img.png)
 
 2. Agregue al método 'checkHost' un parámetro entero N, correspondiente al número de hilos entre los que se va a realizar la búsqueda (recuerde tener en cuenta si N es par o impar!). Modifique el código de este método para que divida el espacio de búsqueda entre las N partes indicadas, y paralelice la búsqueda a través de N hilos. Haga que dicha función espere hasta que los N hilos terminen de resolver su respectivo sub-problema, agregue las ocurrencias encontradas por cada hilo a la lista que retorna el método, y entonces calcule (sumando el total de ocurrencuas encontradas por cada hilo) si el número de ocurrencias es mayor o igual a _BLACK_LIST_ALARM_COUNT_. Si se da este caso, al final se DEBE reportar el host como confiable o no confiable, y mostrar el listado con los números de las listas negras respectivas. Para lograr este comportamiento de 'espera' revise el método [join](https://docs.oracle.com/javase/tutorial/essential/concurrency/join.html) del API de concurrencia de Java. Tenga también en cuenta:
 
 	* Dentro del método checkHost Se debe mantener el LOG que informa, antes de retornar el resultado, el número de listas negras revisadas VS. el número de listas negras total (línea 60). Se debe garantizar que dicha información sea verídica bajo el nuevo esquema de procesamiento en paralelo planteado.
+    
+    ### Agregamos en parametro N y hacemos el manejo de cuando este es par o impar
+    ![img_1.png](img_1.png)
 
 	* Se sabe que el HOST 202.24.34.55 está reportado en listas negras de una forma más dispersa, y que el host 212.24.24.55 NO está en ninguna lista negra.
 
+    ### Realizamos las pruebas con las IP sugeridas (202.24.34.55 y 212.24.24.55) para verificar el correcto funcionamiento de la solucion propuesta.
+    ## PRUEBA HOST 202.24.34.55
+
+    ![img_2.png](img_2.png)
+    ![img_3.png](img_3.png)
+
+    ## PRUEBA HOST 212.24.24.55
+    
+    ![img_4.png](img_4.png)
+    ![img_5.png](img_5.png)
 
 **Parte II.I Para discutir la próxima clase (NO para implementar aún)**
 
