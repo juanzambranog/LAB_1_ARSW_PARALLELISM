@@ -3,6 +3,9 @@
 ### Arquitecturas de Software - ARSW
 ## Ejercicio Introducción al paralelismo - Hilos - Caso BlackListSearch
 
+## LAB 1 ARSW
+
+## Juan David Zambrano Gonzalez
 
 ### Dependencias:
 ####   Lecturas:
